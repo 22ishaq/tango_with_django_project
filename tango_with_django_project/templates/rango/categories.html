@@ -1,0 +1,13 @@
+<ul>
+    {% for category in categories %}
+    <li>
+        <a href="{% url 'rango:show_category' category.slug %}">
+            {% if category == current_category %}
+                <strong>{{ category.name }}</strong>
+            {% else %}
+                {{ category.name }}
+            {% endif %}
+        </a>
+    </li>
+    {% endfor %}
+</ul>
